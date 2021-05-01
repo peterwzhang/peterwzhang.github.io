@@ -1,43 +1,148 @@
 <HTML>
-<style>
-    H1 {
-        text-align: center;
-    }
 
-    H2 {
-        text-align: center;
-    }
+<head>
+    <title>GPA Calculator</title>
+    <script>
+        function addRow() {
+            var table = document.getElementById("gpa-table");
+            var new_row = document.getElementById("gpa-table").children[0].children[1].cloneNode(true);
+            new_row.style.display = ""
+            table.appendChild(new_row);
+        }
+        function delRow() {
+            var table = document.getElementById("gpa-table");
+            var delete_index = table.rows.length - 1
+            if (delete_index > 2){
+                table.deleteRow(delete_index);
+            }
+        }
+        function clearTable() {
+            var first_row = document.getElementById("gpa-table").children[0].children[2];
+            var table = document.getElementById("gpa-table");
+            var delete_index = table.rows.length - 1
+            while (delete_index > 1){
+                table.deleteRow(delete_index);
+                delete_index--;
+            }
+            addRow();
+        }
+        function calcGPA() {
+            var table = document.getElementById("gpa-table");
+            var size = table.rows.length;
+            let GPA = 0.0, hours = 0.0;
+            for (let i = 2; i < size; i++){
+                var gpa_val = parseFloat(table.rows[i].children[2].children[0].selectedOptions[0].value);
+                var hour_val = parseFloat(table.rows[i].children[1].innerHTML);
+                if (isNaN(hour_val)){
+                    // if invalid hour then that class does not count
+                    hour_val = 0;
+                    gpa_val = 0;
+                }
+                GPA += gpa_val * hour_val;
+                hours += hour_val;
+            }
+            if (hours != 0.0){
+            const final_gpa = GPA / hours;
+            document.getElementById('gpa-text').innerHTML = "Your GPA is: " + final_gpa.toFixed(2);
+            }
+        }
+    </script>
+    <style>
+        .flex-parent {
+            display: flex;
+        }
 
-    P {
-        text-align: center;
-    }
+        .jc-center {
+            justify-content: center;
+        }
 
-    table.center {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    td {
-    text-align: right;
-    }
-</style>
+        H1 {
+            text-align: center;
+        }
 
-<H1>Tools</H1>
+        H2 {
+            text-align: center;
+        }
+
+        P {
+            text-align: center;
+        }
+
+        table.center {
+            margin-left: auto;
+            margin-right: auto;
+            table-layout:fixed;
+            width:300px;
+            word-break:break-all;
+        }
+
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<H1>GPA Calculator</H1>
 <P>Fill in the table below to calculate your semester GPA.</P>
-<table style="width:50%" class="center">
+<div class="flex-parent jc-center">
+    <button id="ar-btn" type="button" onclick="addRow()">Add Row</button>
+    <button id="rr-btn" type="button" onclick="delRow()">Remove Row</button>
+    <button id="c-btn" type="button" onclick="clearTable()">Clear</button>
+    <button id="calc-btn" type="button" onclick="calcGPA()">Calculate GPA</button>
+</div>
+<div class="flex-parent jc-center">
+    <p id='gpa-text'>Your GPA is: </p>
+</div>
+<table id="gpa-table" class="center">
     <tr>
-        <th>Course</th>
-        <th>Credits</th>
-        <th>Grade</th>
+        <th width = "60%">Course</th>
+        <th width = "20%">Credits</th>
+        <th width = "20%">Grade</th>
+    </tr>
+    <tr style="display:none">
+        <td contenteditable='true'></td>
+        <td contenteditable='true'></td>
+        <td>
+            <select size="1">        
+                <option value="4.33">A+</option>
+                <option value="4.00">A</option>
+                <option value="3.67">A-</option>
+                <option value="3.33">B+</option>
+                <option value="3.00">B</option>
+                <option value="2.67">B-</option>
+                <option value="2.33">C+</option>
+                <option value="2.00">C</option>
+                <option value="1.67">C-</option>
+                <option value="1.33">D+</option>
+                <option value="1.00">D</option>
+                <option value="0.67">D-</option>
+                <option value="0.00">F</option>
+           </select>
+        </td>
     </tr>
     <tr>
         <td contenteditable='true'></td>
         <td contenteditable='true'></td>
-        <td contenteditable='true'></td>
-    </tr>
-    <tr>
-        <td contenteditable='true'></td>
-        <td contenteditable='true'></td>
-        <td contenteditable='true'></td>
+        <td>
+            <select size="1">        
+                <option value="4.33">A+</option>
+                <option value="4.00">A</option>
+                <option value="3.67">A-</option>
+                <option value="3.33">B+</option>
+                <option value="3.00">B</option>
+                <option value="2.67">B-</option>
+                <option value="2.33">C+</option>
+                <option value="2.00">C</option>
+                <option value="1.67">C-</option>
+                <option value="1.33">D+</option>
+                <option value="1.00">D</option>
+                <option value="0.67">D-</option>
+                <option value="0.00">F</option>
+           </select>
+        </td>
     </tr>
 </table>
 
