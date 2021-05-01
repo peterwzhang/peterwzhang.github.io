@@ -12,7 +12,7 @@
         function delRow() {
             var table = document.getElementById("gpa-table");
             var delete_index = table.rows.length - 1
-            if (delete_index > 2){
+            if (delete_index > 2) {
                 table.deleteRow(delete_index);
             }
         }
@@ -20,7 +20,7 @@
             var first_row = document.getElementById("gpa-table").children[0].children[2];
             var table = document.getElementById("gpa-table");
             var delete_index = table.rows.length - 1
-            while (delete_index > 1){
+            while (delete_index > 1) {
                 table.deleteRow(delete_index);
                 delete_index--;
             }
@@ -30,10 +30,10 @@
             var table = document.getElementById("gpa-table");
             var size = table.rows.length;
             let GPA = 0.0, hours = 0.0;
-            for (let i = 2; i < size; i++){
+            for (let i = 2; i < size; i++) {
                 var gpa_val = parseFloat(table.rows[i].children[2].children[0].selectedOptions[0].value);
                 var hour_val = parseFloat(table.rows[i].children[1].innerHTML);
-                if (isNaN(hour_val)){
+                if (isNaN(hour_val)) {
                     // if invalid hour then that class does not count
                     hour_val = 0;
                     gpa_val = 0;
@@ -41,9 +41,9 @@
                 GPA += gpa_val * hour_val;
                 hours += hour_val;
             }
-            if (hours != 0.0){
-            const final_gpa = GPA / hours;
-            document.getElementById('gpa-text').innerHTML = "Your GPA is: " + final_gpa.toFixed(2);
+            if (hours != 0.0) {
+                const final_gpa = GPA / hours;
+                document.getElementById('gpa-text').innerHTML = "Your GPA is: " + final_gpa.toFixed(2);
             }
         }
     </script>
@@ -71,9 +71,9 @@
         table.center {
             margin-left: auto;
             margin-right: auto;
-            table-layout:fixed;
-            width:300px;
-            word-break:break-all;
+            table-layout: fixed;
+            width: 300px;
+            word-break: break-all;
         }
 
         td {
@@ -98,15 +98,15 @@
 </div>
 <table id="gpa-table" class="center">
     <tr>
-        <th width = "60%">Course</th>
-        <th width = "20%">Credits</th>
-        <th width = "20%">Grade</th>
+        <th width="60%">Course</th>
+        <th width="20%">Credits</th>
+        <th width="20%">Grade</th>
     </tr>
     <tr style="display:none">
         <td contenteditable='true'></td>
         <td contenteditable='true'></td>
         <td>
-            <select size="1">        
+            <select size="1">
                 <option value="4.33">A+</option>
                 <option value="4.00">A</option>
                 <option value="3.67">A-</option>
@@ -120,14 +120,14 @@
                 <option value="1.00">D</option>
                 <option value="0.67">D-</option>
                 <option value="0.00">F</option>
-           </select>
+            </select>
         </td>
     </tr>
     <tr>
         <td contenteditable='true'></td>
         <td contenteditable='true'></td>
         <td>
-            <select size="1">        
+            <select size="1">
                 <option value="4.33">A+</option>
                 <option value="4.00">A</option>
                 <option value="3.67">A-</option>
@@ -141,7 +141,7 @@
                 <option value="1.00">D</option>
                 <option value="0.67">D-</option>
                 <option value="0.00">F</option>
-           </select>
+            </select>
         </td>
     </tr>
 </table>
