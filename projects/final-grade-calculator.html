@@ -16,12 +16,12 @@
             let final_worth = parseFloat(table[6].value);
             let des_grade = parseFloat(table[10].value);
             if (isNaN(cur_grade) || isNaN(final_worth) || isNaN(des_grade)) {
-                document.getElementById('grade-text').innerHTML = "Please check your inputs.";
+                document.getElementById("grade-text").innerHTML = "Please check your inputs.";
             }
             else {
                 final_worth /= 100;
                 let final_grade = (des_grade - (1 - final_worth) * cur_grade) / final_worth;
-                document.getElementById('grade-text').innerHTML = "You need to get a: " + final_grade.toFixed(2) + " to get a " + des_grade.toFixed(2) + ".";
+                document.getElementById("grade-text").innerHTML = "You need to get a: " + final_grade.toFixed(2) + " to get a " + des_grade.toFixed(2) + ".";
             }
         }
     </script>
@@ -70,7 +70,7 @@
     <button id="calc-btn" type="button" onclick="calcGrade()">Calculate Grade</button>
 </div>
 <div class="flex-parent jc-center">
-    <p id='grade-text'></p>
+    <p id="grade-text"></p>
 </div>
 <div class="flex-parent jc-center">
     <form id="info-form">
