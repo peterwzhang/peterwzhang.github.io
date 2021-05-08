@@ -1,6 +1,32 @@
 <HTML>
 
 <head>
+    <script>
+        function flipcoin() {
+            var table = document.getElementById("info-form").children;
+            var bal_text = document.getElementById("balance-text");
+            var res_text = document.getElementById("result-text");
+            let cur_bal = parseFloat(bal_text.innerHTML);
+            let bet_amt = parseFloat(table[2].value);
+            if (bet_amt <= cur_bal) {
+                let roll = Math.floor(Math.random() * 100);
+                if (roll < 50){
+                    bet_amt *= 2;
+                    cur_bal += bet_amt;
+                    res_text.innerHTML = "You won $" + (bet_amt).toFixed(2) + "!"
+                    bal_text.innerHTML = cur_bal;
+                }
+                else {
+                    cur_bal -= bet_amt;
+                    res_text.innerHTML = "You lost $" + (bet_amt).toFixed(2) + "."
+                    bal_text.innerHTML = cur_bal;
+                }
+            }
+            else {
+                res_text.innerHTML = "Please bet below or equal to your balance ($" + (cur_bal).toFixed(2) + ")."
+            }
+        }
+    </script>
     <style>
         H1 {
             text-align: center;
@@ -13,10 +39,37 @@
         P {
             text-align: center;
         }
+
+        .flex-parent {
+            display: flex;
+        }
+
+        .jc-center {
+            justify-content: center;
+        }
+
     </style>
 </head>
 
-<H1>WIP</H1>
+<H1>Coinflip</H1>
+<br>
+<div class="flex-parent jc-center">
+    <p id="text">Your balance is: $</p>
+    <p id="balance-text">10.00</p>
+</div>
+<div class="flex-parent jc-center">
+    <form id="info-form">
+        <label for="bet-amt">Bet amount:</label><br>
+        <input type="text" id="bet-amt" name="bet-amt" style="direction: rtl;"><br>
+    </form>
+
+</div>
+<div class="flex-parent jc-center">
+    <button id="calc-btn" type="button" onclick="flipcoin()">flip</button>
+</div>
+<div class="flex-parent jc-center">
+    <p id="result-text"></p>
+</div>
 
 
 </HTML>
