@@ -8,7 +8,11 @@
             var res_text = document.getElementById("result-text");
             let cur_bal = parseFloat(bal_text.innerHTML);
             let bet_amt = parseFloat(table[2].value);
-            if (bet_amt > 0 && bet_amt <= cur_bal) {
+            if (isNaN(bet_amt) || bet_amt < 0){
+                res_text.innerHTML = "Please enter valid bet amount."
+                return;
+            }
+            if (bet_amt <= cur_bal) {
                 let roll = Math.floor(Math.random() * 100);
                 if (roll < 35){
                     bet_amt *= 2;
@@ -60,7 +64,7 @@
 <div class="flex-parent jc-center">
     <form id="info-form">
         <label for="bet-amt">Bet amount:</label><br>
-        <input type="text" id="bet-amt" name="bet-amt" style="direction: rtl;"><br>
+        <input type="text" id="bet-amt" name="bet-amt" style="direction: initial;"><br>
     </form>
 
 </div>
