@@ -9,8 +9,8 @@
             let cur_bal = parseFloat(bal_text.innerHTML);
             let bet_amt = parseFloat(table[2].value);
             if (bet_amt > 0 && bet_amt <= cur_bal) {
-                let roll = Math.floor(Math.random() * 2);
-                if (roll == 0){
+                let roll = Math.floor(Math.random() * 100);
+                if (roll < 35){
                     bet_amt *= 2;
                     cur_bal += bet_amt;
                     res_text.innerHTML = "You won $" + (bet_amt).toFixed(2) + "!"
