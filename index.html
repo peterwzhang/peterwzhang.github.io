@@ -1,29 +1,440 @@
-<HTML>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peter Zhang - Software Engineer</title>
+    <meta
+      name="description"
+      content="Peter Zhang - Software Engineer passionate about building innovative solutions and sharing knowledge through code and literature."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a
+            href="https://www.linkedin.com/in/pwzhang/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>Peter Zhang</span>
+          </a>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+          <li class="nav-item">
+            <a href="#about" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#experience" class="nav-link">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a href="#library" class="nav-link">Library</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+          <li class="nav-item">
+            <button
+              class="theme-toggle"
+              id="theme-toggle"
+              aria-label="Toggle dark mode"
+            >
+              <i class="fas fa-moon"></i>
+            </button>
+          </li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
 
-<head>
-    <style>
-        H1 {
-            text-align: center;
-        }
+    <!-- Hero Section -->
+    <section id="about" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">
+              Hi, I'm <span class="highlight">Peter Zhang</span>
+            </h1>
+            <p class="hero-subtitle">Senior Software Engineer</p>
+            <p class="hero-description">
+              I build systems that help businesses move faster, spend smarter,
+              and get more value from their data through distributed systems,
+              data pipelines, or internal tools.<br /><br />
+              My focus involves backend development and data infrastructure. I
+              work on systems that power data analytics and machine learning.<br /><br />
+              I take a stakeholder first approach, understanding how solutions
+              can serve real needs and empowering people to make clear decisions
+              faster.
+            </p>
+            <div class="hero-buttons">
+              <a href="#contact" class="btn btn-primary">Get In Touch</a>
+              <a
+                href="https://github.com/peterwzhang"
+                target="_blank"
+                class="btn btn-secondary"
+              >
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <picture class="profile-picture">
+              <source
+                srcset="assets/images/Peter_Zhang_Profile.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="assets/images/Peter_Zhang_Profile.jpg"
+                type="image/jpeg"
+              />
+              <img
+                src="assets/images/Peter_Zhang_Profile.jpg"
+                alt="Peter Zhang, Software Engineer"
+                class="profile-img"
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        H2 {
-            text-align: center;
-        }
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+          <!-- Add your experience items here -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Senior Software Engineer</h3>
+              <h4>Michelin</h4>
+              <span class="timeline-date">2024 - Present</span>
+              <p>
+                Build and deploy containerized data services to support
+                analytics and data science teams, architect and develop backend
+                systems for application teams, and create custom developer tools
+                such as IDE extensions and MCP servers to enhance productivity
+                across the organization.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Software Engineer</h3>
+              <h4>Michelin</h4>
+              <span class="timeline-date">2023 - 2024</span>
+              <p>
+                Designed, built, and maintained both streaming and batch data
+                pipelines supporting tire production and quality reporting,
+                while also developing custom BI visuals and backend data
+                services for use by other development teams.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Web Development Assistant</h3>
+              <h4>The University of Alabama</h4>
+              <span class="timeline-date">2021 - 2022</span>
+              <p>
+                Developed WordPress webpages for the Computer Science department
+                using JavaScript, CSS, and HTML; managed content and implemented
+                SEO optimization with keyword research to improve department
+                outreach and visibility.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        P {
-            text-align: center;
-        }
-    </style>
-</head>
+    <!-- Skills Section -->
 
-<H1>Welcome</H1>
-<hr>
-<P>This is a temporary website to maintain links to some of my other projects.</P>
-<H2><a href="https://github.com/PeterTheAmazingAsian">My GitHub</a></H2>
-<br>
-<H2><a href="tools.html">Tools</a></H2>
-<br>
+    <!-- Library Section -->
+    <section id="library" class="section bg-alt">
+      <div class="container">
+        <h2 class="section-title">Book Recommendations</h2>
+        <p class="section-subtitle">
+          Books that have shaped my thinking and approach to software
+          engineering
+        </p>
+            <div class="books-grid">
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://covers.openlibrary.org/b/isbn/9780201616224-M.jpg?default=false" alt="The Pragmatic Programmer cover" class="book-cover-img" 
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="book-cover-fallback" style="display: none;">
+                <svg width="40" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 19.5C4 18.837 4.264 18.201 4.732 17.732C5.201 17.264 5.837 17 6.5 17H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M6.5 2H20V22H6.5C5.837 22 5.201 21.736 4.732 21.268C4.264 20.799 4 20.163 4 19.5V4.5C4 3.837 4.264 3.201 4.732 2.732C5.201 2.264 5.837 2 6.5 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 7H16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M9 11H16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M9 15H13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+            </div>
+                    </div>
+                    <div class="book-info">
+                        <h3>The Pragmatic Programmer</h3>
+                        <p class="book-author">by David Thomas, Andrew Hunt</p>
+                        <p class="book-description"></p>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://covers.openlibrary.org/b/isbn/9781449373320-M.jpg?default=false" alt="Designing Data-Intensive Applications cover" class="book-cover-img" 
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="book-cover-fallback" style="display: none;">
+                <svg width="40" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 19.5C4 18.837 4.264 18.201 4.732 17.732C5.201 17.264 5.837 17 6.5 17H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M6.5 2H20V22H6.5C5.837 22 5.201 21.736 4.732 21.268C4.264 20.799 4 20.163 4 19.5V4.5C4 3.837 4.264 3.201 4.732 2.732C5.201 2.264 5.837 2 6.5 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 7H16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M9 11H16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M9 15H13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+            </div>
+                    </div>
+                    <div class="book-info">
+                        <h3>Designing Data-Intensive Applications</h3>
+                        <p class="book-author">by Martin Kleppmann</p>
+                        <p class="book-description"></p>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://covers.openlibrary.org/b/isbn/9780134757599-M.jpg?default=false" alt="Refactoring cover" class="book-cover-img" 
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="book-cover-fallback" style="display: none;">
+                <svg width="40" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 19.5C4 18.837 4.264 18.201 4.732 17.732C5.201 17.264 5.837 17 6.5 17H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M6.5 2H20V22H6.5C5.837 22 5.201 21.736 4.732 21.268C4.264 20.799 4 20.163 4 19.5V4.5C4 3.837 4.264 3.201 4.732 2.732C5.201 2.264 5.837 2 6.5 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 7H16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M9 11H16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M9 15H13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+            </div>
+                    </div>
+                    <div class="book-info">
+                        <h3>Refactoring</h3>
+                        <p class="book-author">by Martin Fowler</p>
+                        <p class="book-description"></p>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://covers.openlibrary.org/b/isbn/9781492082798-M.jpg?default=false" alt="Software Engineering at Google cover" class="book-cover-img" 
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="book-cover-fallback" style="display: none;">
+                <svg width="40" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 19.5C4 18.837 4.264 18.201 4.732 17.732C5.201 17.264 5.837 17 6.5 17H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M6.5 2H20V22H6.5C5.837 22 5.201 21.736 4.732 21.268C4.264 20.799 4 20.163 4 19.5V4.5C4 3.837 4.264 3.201 4.732 2.732C5.201 2.264 5.837 2 6.5 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 7H16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M9 11H16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M9 15H13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+            </div>
+                    </div>
+                    <div class="book-info">
+                        <h3>Software Engineering at Google</h3>
+                        <p class="book-author">by Titus Winters, Hyrum Wright, Tom Manshreck</p>
+                        <p class="book-description"></p>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://covers.openlibrary.org/b/isbn/9781942788331-M.jpg?default=false" alt="Accelerate cover" class="book-cover-img" 
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="book-cover-fallback" style="display: none;">
+                <svg width="40" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 19.5C4 18.837 4.264 18.201 4.732 17.732C5.201 17.264 5.837 17 6.5 17H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M6.5 2H20V22H6.5C5.837 22 5.201 21.736 4.732 21.268C4.264 20.799 4 20.163 4 19.5V4.5C4 3.837 4.264 3.201 4.732 2.732C5.201 2.264 5.837 2 6.5 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 7H16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M9 11H16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M9 15H13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+            </div>
+                    </div>
+                    <div class="book-info">
+                        <h3>Accelerate</h3>
+                        <p class="book-author">by Nicole Forsgren, Jez Humble, Gene Kim</p>
+                        <p class="book-description"></p>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://covers.openlibrary.org/b/isbn/9781491973899-M.jpg?default=false" alt="The Manager's Path cover" class="book-cover-img" 
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="book-cover-fallback" style="display: none;">
+                <svg width="40" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 19.5C4 18.837 4.264 18.201 4.732 17.732C5.201 17.264 5.837 17 6.5 17H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M6.5 2H20V22H6.5C5.837 22 5.201 21.736 4.732 21.268C4.264 20.799 4 20.163 4 19.5V4.5C4 3.837 4.264 3.201 4.732 2.732C5.201 2.264 5.837 2 6.5 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 7H16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M9 11H16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M9 15H13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+            </div>
+                    </div>
+                    <div class="book-info">
+                        <h3>The Manager's Path</h3>
+                        <p class="book-author">by Camille Fournier</p>
+                        <p class="book-description"></p>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://covers.openlibrary.org/b/isbn/9781736417911-M.jpg?default=false" alt="Staff Engineer cover" class="book-cover-img" 
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="book-cover-fallback" style="display: none;">
+                <svg width="40" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 19.5C4 18.837 4.264 18.201 4.732 17.732C5.201 17.264 5.837 17 6.5 17H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M6.5 2H20V22H6.5C5.837 22 5.201 21.736 4.732 21.268C4.264 20.799 4 20.163 4 19.5V4.5C4 3.837 4.264 3.201 4.732 2.732C5.201 2.264 5.837 2 6.5 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 7H16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M9 11H16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M9 15H13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+            </div>
+                    </div>
+                    <div class="book-info">
+                        <h3>Staff Engineer</h3>
+                        <p class="book-author">by Will Larson</p>
+                        <p class="book-description"></p>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://covers.openlibrary.org/b/isbn/9781942788157-M.jpg?default=false" alt="Making Work Visible cover" class="book-cover-img" 
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="book-cover-fallback" style="display: none;">
+                <svg width="40" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 19.5C4 18.837 4.264 18.201 4.732 17.732C5.201 17.264 5.837 17 6.5 17H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M6.5 2H20V22H6.5C5.837 22 5.201 21.736 4.732 21.268C4.264 20.799 4 20.163 4 19.5V4.5C4 3.837 4.264 3.201 4.732 2.732C5.201 2.264 5.837 2 6.5 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 7H16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M9 11H16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M9 15H13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+            </div>
+                    </div>
+                    <div class="book-info">
+                        <h3>Making Work Visible</h3>
+                        <p class="book-author">by Dominica DeGrandis</p>
+                        <p class="book-description"></p>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Add more book recommendations -->
+            </div>
+      </div>
+    </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">
+          Let's connect and discuss opportunities or just chat about technology!
+        </p>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="social-links">
+              <a
+                href="https://github.com/peterwzhang"
+                target="_blank"
+                class="social-link"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/pwzhang/"
+                target="_blank"
+                class="social-link"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="mailto:peterwengzhang@gmail.com" class="social-link">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Peter Zhang. All rights reserved.</p>
+      </div>
+    </footer>
 
-</HTML>
+    <script src="script.js"></script>
+  </body>
+</html>
