@@ -77,7 +77,7 @@ window.WindowManager = {
                             <h2 class="text-xl font-bold mb-4 border-b dark:border-gray-600 pb-2">Experience</h2>
                             <div class="space-y-6">
                                 <div>
-                                    <h3 class="font-bold">Senior Software Engineer @ <a href="https://www.michelin.com/en/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">Michelin</a></h3>">Michelin</a></h3>
+                                    <h3 class="font-bold">Senior Software Engineer @ <a href="https://www.michelin.com/en/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">Michelin</a></h3>
                                     <p class="text-sm text-gray-500 dark:text-gray-400">2024 - Present</p>
                                     <p class="text-sm mt-1 dark:text-gray-300">Build and deploy containerized data services to support analytics and data science teams.</p>
                                 </div>
