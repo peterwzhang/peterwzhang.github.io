@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Check formatting
+        run: npm run format:check
+
+      # styles.css is a committed build artifact because GitHub Pages serves
+      # this repo as-is. Rebuilding it here proves the committed copy matches
+      # the source, so a stale stylesheet can never ship.
+      - name: Rebuild CSS
+        run: npm run build
+
+      - name: Fail if styles.css is stale
+        run: |
+          if ! git diff --exit-code styles.css; then
+            echo "::error::styles.css is out of date. Run 'npm run build' and commit the result."
+            exit 1
+          fi

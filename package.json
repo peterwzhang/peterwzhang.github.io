@@ -1,17 +1,25 @@
 {
   "name": "peterwzhang.github.io",
   "version": "1.0.0",
-  "description": "A modern, responsive portfolio website showcasing projects, skills, and book recommendations with beautiful SVG fallbacks and horizontal scrolling galleries.",
-  "main": "books-generator.js",
+  "description": "Peter Zhang's portfolio, built as a browser-based desktop OS (PeterOS) with vanilla HTML, JavaScript and Tailwind CSS.",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tailwindcss -i ./input.css -o ./styles.css --minify",
+    "watch": "tailwindcss -i ./input.css -o ./styles.css --watch",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "portfolio",
+    "tailwindcss",
+    "github-pages"
+  ],
+  "author": "Peter Zhang",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.22",
     "postcss": "^8.5.6",
+    "prettier": "^3.9.6",
     "tailwindcss": "^3.4.18"
   }
 }

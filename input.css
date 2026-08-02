@@ -1,3 +1,98 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    overflow: hidden;
+  }
+
+  /* Keyboard users need to see where they are. */
+  :focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  .desktop-bg {
+    background-image: url('./assets/images/desktop-background.webp');
+  }
+
+  .window {
+    transition:
+      transform 0.1s,
+      opacity 0.2s;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  }
+
+  .window.minimized {
+    transform: scale(0) translate(0, 100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .desktop-icon:hover {
+    background-color: rgb(255 255 255 / 0.2);
+  }
+
+  .desktop-icon.selected {
+    background-color: rgb(255 255 255 / 0.3);
+    border: 1px solid rgb(255 255 255 / 0.4);
+  }
+
+  .resize-handle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    cursor: se-resize;
+    background: linear-gradient(135deg, transparent 50%, #9ca3af 50%);
+    border-bottom-right-radius: 0.5rem;
+    z-index: 50;
+  }
+
+  .resize-handle:hover {
+    background: linear-gradient(135deg, transparent 50%, #4b5563 50%);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #6b7280;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .window {
+    transition: none;
+  }
+}
